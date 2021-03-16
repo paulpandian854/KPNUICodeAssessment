@@ -1,0 +1,18 @@
+<table class="table table-sm table-striped">
+    <thead>
+      <tr>
+        <th>Planned Departure Time</th>
+        <th>Direction</th>
+        <th>Platform</th>
+        <th>Train Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let depar of departureDetails.departures">
+        <td>{{depar.plannedDateTime}}</td>
+        <td>{{depar.direction}}</td>
+        <td>{{depar.plannedTrack}}</td>
+        <td>{{depar.trainCategory | truncate}}</td>
+      </tr>
+    </tbody>
+  </table>

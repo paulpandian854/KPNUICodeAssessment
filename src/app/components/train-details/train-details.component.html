@@ -1,0 +1,17 @@
+<div class="container h-80">
+  <div class="row align-items-center h-100">
+    <div class="col-3 mx-auto">
+      <div class="text-center">
+
+        <img id="profile-img" class="rounded-circle profile-img-card" src="https://i.imgur.com/6b6psnA.png" />
+        <p id="profile-name" class="profile-name-card"></p>
+        <form *ngIf="station">
+          <child-component [station]="station" (submit)="onSubmit($event)"></child-component>
+        </form>
+      </div>
+    </div>
+  </div>
+  <alert-component *ngIf="error"></alert-component>
+
+  <!--Table to load departure details-->
+  <departure-table *ngIf="departureDetails" [departureDetails]="departureDetails"></departure-table>

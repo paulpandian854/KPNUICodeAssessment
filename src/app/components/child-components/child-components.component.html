@@ -1,0 +1,14 @@
+<label class="text-danger">Please Select a Station</label>
+
+<!--Select DropDown for displaying list of stations-->
+
+<select id="dropdown" [(ngModel)]="stationCode" (ngModelChange)="onSelect()" name="station">
+    <option *ngFor="let title of station" [ngValue]="title.code">
+        {{title.namen.lang}}
+    </option>
+</select>
+
+<!-- to display code-->
+Code: <input type="text" name="stationCode" id="stationCode" class="form__input" placeholder="Station Code"
+    [(ngModel)]="stationCode">
+<button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" (click)="onSubmit()">Submit</button>
